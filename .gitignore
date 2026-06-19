@@ -1,0 +1,63 @@
+# ----------------------------------------------------------------------
+# CLAUD WORKSPACE - GLOBAL GITIGNORE
+# ----------------------------------------------------------------------
+
+# Claude Code Settings (just in case they are ever moved here)
+.claude/
+settings.json
+*.json.bak
+
+# API Keys & Environments
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node/JavaScript
+node_modules/
+dist/
+build/
+.npm
+npm-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Executables
+*.exe
+
+# Embedded Repos
+ECC/
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Antigravity/Gemini temporary files
+scratch/
+.system_generated/
