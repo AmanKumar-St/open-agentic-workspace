@@ -11,6 +11,27 @@
 
 Welcome to the **CLAUD Workspace**! This repository is designed to be your ultimate, zero-cost agentic coding environment. We warmly welcome all users to openly use, modify, and build upon this workspace for their own projects!
 
+## 📋 Prerequisites
+Before diving in, ensure you have the core tools installed:
+1. **Claude Code CLI**: This workspace relies on the official Anthropic CLI. Install it globally:
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+2. **ECC (Everything Claude Code)**: This workspace is heavily powered by the ECC framework. You **must** install the ECC plugin to make this environment work as intended. Please refer to the [official ECC Repository](https://github.com/affaan-m/ECC.git) for detailed installation instructions before proceeding. Without ECC, the templates and agent prompts will not function.
+
+## 📖 Table of Contents: The Perfect Flow
+To get the most out of this workspace, we recommend following these guides in a specific order:
+
+1. **Setup Free AI Models**
+   - [Step 1: Choose a Free OpenRouter Model](./USE_GUIDE/Free_Open_router_model.md)
+   - [Step 2: Change the Workspace Model](./USE_GUIDE/futureModelChange.md)
+2. **Using the Workspace**
+   - [Step 3: Create a New Project](./USE_GUIDE/NewProjectGuide.md)
+   - [Step 4: Tech Stack & Architecture Rules](./USE_GUIDE/Claude_Tech_stack_Guide.md)
+   - [Step 5: Using ECC Without the Plugin](./USE_GUIDE/UseWithoutPlugin.md)
+3. **Deep Dive**
+   - [Comprehensive ECC Documentation](./USE_GUIDE/ECC%20README.md)
+
 ## ✨ What Makes This Workspace Great?
 The `CLAUD` folder is more than just a directory—it's a fully configured, multi-project workspace supercharged by the **Enhanced Claude Code (ECC)** architecture. It provides:
 - **Pre-configured Agent Workflows:** Immediate access to specialized subagents (like planners, code reviewers, security auditors, and architecture designers).
@@ -20,23 +41,9 @@ The `CLAUD` folder is more than just a directory—it's a fully configured, mult
 ## 🧠 Harnessing ECC Power... For Free!
 By default, Anthropic's Claude Code CLI requires a paid subscription to access their proprietary models. However, this workspace is designed to skillfully bypass that requirement. 
 
-By strategically editing the Claude Code configuration and rerouting the API requests through **OpenRouter**, we unlock the ability to power the ECC architecture using incredibly capable, **100% free open-source models** (such as DeepSeek, Qwen Coder, and Llama 3). 
+By editing `.claude/settings.json` and rerouting the API requests through **OpenRouter**, we unlock the ability to power the ECC architecture using incredibly capable, **100% free open-source models** (such as DeepSeek, Qwen Coder, and Llama 3). 
 
-This means you get the premium, multi-agent coding experience of ECC—with all its plugins and tools—entirely for free!
-
-## 🛠️ Quick Setup Guide for New Projects
-When you're ready to start coding, setting up a new project with your preferred tech stack is incredibly simple:
-
-1. **Create your project folder:** Make a new subdirectory inside the `CLAUD` directory.
-2. **Apply a Stack Template:** Copy the `CLAUDE.md` from the appropriate template folder in `_templates/` directly into your new project folder.
-   - For *React + Vite*, copy from `_templates/react-vite-tailwind-gsap/CLAUDE.md`
-   - For *Vanilla JS*, copy from `_templates/vanilla-js/CLAUDE.md`
-   - For *Python*, use the existing Python project template.
-3. **Update the Registry:** Add your new project to the central registry table in `AGENTS.md`.
-4. **Start Coding:** Run your agent inside the new folder. The template will automatically enforce the correct tech stack rules, formatting, and subagent delegation!
-
-## 📚 Want to Learn More?
-For comprehensive instructions, advanced configurations, and a full tutorial on how to configure and switch out the free OpenRouter models, please refer to the **[USE_GUIDE](./USE_GUIDE/)** directory. 
+For a complete walkthrough on how to do this—including how to use our automated `update_model.ps1` script to apply your model of choice across all agents—please follow the **Setup Free AI Models** steps in the Table of Contents above. This ensures you get the premium, multi-agent coding experience entirely for free!
 
 ---
 *Happy Coding! Let's build something amazing.*
