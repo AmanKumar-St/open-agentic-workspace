@@ -1,6 +1,6 @@
 # New Project Guide — Adding a Project to the ECC Workspace
 
-Every new project in `e:\CLAUD\` follows the same 4-step checklist.
+Every new project in `./` follows the same 4-step checklist.
 This guide walks through each step in full detail with working examples for every stack.
 
 ---
@@ -8,9 +8,9 @@ This guide walks through each step in full detail with working examples for ever
 ## The 4-Step Checklist (Quick Reference)
 
 ```
-Step 1 → Create the project folder under e:\CLAUD\
+Step 1 → Create the project folder under ./
 Step 2 → Copy the right CLAUDE.md template into it (then customize)
-Step 3 → Register the project in e:\CLAUD\AGENTS.md
+Step 3 → Register the project in ./AGENTS.md
 Step 4 → Open claude CLI from the project folder
 ```
 
@@ -20,17 +20,17 @@ That's it. Steps 1–3 take about 5 minutes. Details below.
 
 ## Step 1 — Create the Project Folder
 
-All projects live directly under `e:\CLAUD\`.
+All projects live directly under `./`.
 One project = one folder. Never nest projects inside each other.
 
 ```powershell
 # General pattern:
-New-Item -ItemType Directory "e:\CLAUD\<your-project-name>"
+New-Item -ItemType Directory "./<your-project-name>"
 
 # Examples:
-New-Item -ItemType Directory "e:\CLAUD\portfolio-site"
-New-Item -ItemType Directory "e:\CLAUD\weather-app"
-New-Item -ItemType Directory "e:\CLAUD\discord-bot"
+New-Item -ItemType Directory "./portfolio-site"
+New-Item -ItemType Directory "./weather-app"
+New-Item -ItemType Directory "./discord-bot"
 ```
 
 > Rule: The folder name becomes how you refer to the project everywhere.
@@ -48,9 +48,9 @@ what rules to follow, and which ECC agents/skills to use.
 
 | Your Stack | Template to copy from |
 |-----------|----------------------|
-| React + Vite + Tailwind CSS + GSAP | `e:\CLAUD\_templates\react-vite-tailwind-gsap\CLAUDE.md` |
-| Vanilla JavaScript | `e:\CLAUD\_templates\vanilla-js\CLAUDE.md` |
-| Python (any framework) | `e:\CLAUD\pyGame\CLAUDE.md` as a starting point |
+| React + Vite + Tailwind CSS + GSAP | `./_templates/react-vite-tailwind-gsap/CLAUDE.md` |
+| Vanilla JavaScript | `./_templates/vanilla-js/CLAUDE.md` |
+| Python (any framework) | `./pyGame/CLAUDE.md` as a starting point |
 
 ---
 
@@ -61,8 +61,8 @@ what rules to follow, and which ECC agents/skills to use.
 #### 2A-1. Scaffold the project first, then copy CLAUDE.md
 
 ```powershell
-# From e:\CLAUD\portfolio-site:
-cd e:\CLAUD\portfolio-site
+# From ./portfolio-site:
+cd ./portfolio-site
 
 # Create Vite + React app in current folder
 npm create vite@latest . -- --template react
@@ -77,12 +77,12 @@ npx tailwindcss init -p
 #### 2A-2. Copy the CLAUDE.md template
 
 ```powershell
-Copy-Item "e:\CLAUD\_templates\react-vite-tailwind-gsap\CLAUDE.md" "e:\CLAUD\portfolio-site\CLAUDE.md"
+Copy-Item "./_templates/react-vite-tailwind-gsap/CLAUDE.md" "./portfolio-site/CLAUDE.md"
 ```
 
 #### 2A-3. Customize the CLAUDE.md — what to change
 
-Open `e:\CLAUD\portfolio-site\CLAUDE.md` and edit these sections:
+Open `./portfolio-site/CLAUDE.md` and edit these sections:
 
 **Change the title line:**
 ```markdown
@@ -196,7 +196,7 @@ src/
 #### 2B-1. Create the project structure manually
 
 ```powershell
-cd e:\CLAUD\weather-app
+cd ./weather-app
 
 # Create folder structure
 New-Item -ItemType Directory src, src\modules, src\utils, styles, assets
@@ -210,7 +210,7 @@ New-Item styles\main.css
 #### 2B-2. Copy the CLAUDE.md template
 
 ```powershell
-Copy-Item "e:\CLAUD\_templates\vanilla-js\CLAUDE.md" "e:\CLAUD\weather-app\CLAUDE.md"
+Copy-Item "./_templates/vanilla-js/CLAUDE.md" "./weather-app/CLAUDE.md"
 ```
 
 #### 2B-3. Customize the CLAUDE.md
@@ -292,7 +292,7 @@ Or: manually set window.ENV = { WEATHER_API_KEY: '...' } in a config.js (no bund
 #### 2C-1. Create the project structure
 
 ```powershell
-cd e:\CLAUD\discord-bot
+cd ./discord-bot
 New-Item -ItemType Directory src, tests
 New-Item src\bot.py, src\commands.py, src\config.py, tests\test_commands.py
 ```
@@ -300,7 +300,7 @@ New-Item src\bot.py, src\commands.py, src\config.py, tests\test_commands.py
 #### 2C-2. Use pyGame's CLAUDE.md as a starting point
 
 ```powershell
-Copy-Item "e:\CLAUD\pyGame\CLAUDE.md" "e:\CLAUD\discord-bot\CLAUDE.md"
+Copy-Item "./pyGame/CLAUDE.md" "./discord-bot/CLAUDE.md"
 ```
 
 #### 2C-3. Rewrite it completely for the new project
@@ -317,21 +317,21 @@ The pyGame CLAUDE.md is a starting point for structure only — every section ne
 ## Stack
 - Language: Python 3.11+
 - Framework: discord.py 2.x
-- Python path: d:\Downloads\python\python.exe
+- Python path: python
 - Package manager: pip
 ```
 
 **Dev Commands:**
 ```markdown
 ## Dev Commands
-# Run the bot (from e:\CLAUD\discord-bot)
-d:\Downloads\python\python.exe src\bot.py
+# Run the bot (from ./discord-bot)
+python src\bot.py
 
 # Run tests
-d:\Downloads\python\python.exe -m pytest tests/ -v
+python -m pytest tests/ -v
 
 # Install dependencies
-d:\Downloads\python\python.exe -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 **Project Structure:**
@@ -379,9 +379,9 @@ discord-bot/
 
 ---
 
-## Step 3 — Register in e:\CLAUD\AGENTS.md
+## Step 3 — Register in ./AGENTS.md
 
-Open [e:\CLAUD\AGENTS.md](e:\CLAUD\AGENTS.md) and add your project to the Projects table.
+Open [AGENTS.md](./AGENTS.md) and add your project to the Projects table.
 
 **Current table:**
 ```markdown
@@ -407,7 +407,7 @@ Open [e:\CLAUD\AGENTS.md](e:\CLAUD\AGENTS.md) and add your project to the Projec
 | weather-app | Vanilla JS | `./weather-app/` | Active |
 ```
 
-> Why this matters: When Claude Code CLI starts from `e:\CLAUD\`, it reads `AGENTS.md`
+> Why this matters: When Claude Code CLI starts from the workspace root (`./`), it reads `AGENTS.md`
 > and knows what sub-projects exist. Cross-harness tools (Cursor, Codex) also auto-detect this file.
 
 ---
@@ -418,20 +418,20 @@ Always launch `claude` from inside the project folder — not from the workspace
 
 ```powershell
 # For portfolio-site:
-cd e:\CLAUD\portfolio-site
+cd ./portfolio-site
 claude
 
 # For weather-app:
-cd e:\CLAUD\weather-app
+cd ./weather-app
 claude
 
 # For discord-bot:
-cd e:\CLAUD\discord-bot
+cd ./discord-bot
 claude
 ```
 
 Why: Claude Code CLI reads `CLAUDE.md` from the current working directory.
-If you run `claude` from `e:\CLAUD\` (workspace root), it reads `AGENTS.md` but
+If you run `claude` from the workspace root (`./`), it reads `AGENTS.md` but
 not any project's `CLAUDE.md` — meaning it won't know your stack rules.
 
 ---
@@ -521,7 +521,7 @@ Claude will make wrong assumptions in that area.
 ## Checklist (Print This Out)
 
 ```
-[ ] 1. Created folder: e:\CLAUD\<project-name>\
+[ ] 1. Created folder: `./<project-name>/`
 [ ] 2. Copied CLAUDE.md template for my stack
 [ ] 3. Changed the title line in CLAUDE.md
 [ ] 4. Deleted the <!-- TEMPLATE: ... --> comment block
@@ -530,7 +530,7 @@ Claude will make wrong assumptions in that area.
 [ ] 7. Updated Project Structure with real folders
 [ ] 8. Added Known Issues / Gotchas
 [ ] 9. Added Agent Delegation section
-[ ] 10. Updated e:\CLAUD\AGENTS.md projects table
+[ ] 10. Updated `./AGENTS.md` projects table
 [ ] 11. Opened claude CLI from the project folder (cd + claude)
 ```
 
@@ -541,7 +541,7 @@ Claude will make wrong assumptions in that area.
 | ❌ Don't | ✅ Do Instead |
 |---------|-------------|
 | Leave `[PROJECT NAME]` placeholder in CLAUDE.md | Replace with your actual project name |
-| Run `claude` from `e:\CLAUD\` root for project work | Run it from inside `e:\CLAUD\<project>\` |
+| Run `claude` from the workspace root (`./`) | Run it from inside `./<project>/` |
 | Put secrets / API keys in CLAUDE.md | Use `.env` and note the var name in CLAUDE.md |
 | Copy ALL template rules if they don't apply | Remove sections that don't apply to your stack |
 | Forget to update `AGENTS.md` workspace registry | Always update the Projects table |
@@ -552,14 +552,14 @@ Claude will make wrong assumptions in that area.
 ## Example: Full Timeline for Adding `portfolio-site`
 
 ```
-2 min  →  mkdir e:\CLAUD\portfolio-site
-           cd e:\CLAUD\portfolio-site
+2 min  →  mkdir ./portfolio-site
+           cd ./portfolio-site
            npm create vite@latest . -- --template react
            npm install gsap @gsap/react
            npm install -D tailwindcss postcss autoprefixer
            npx tailwindcss init -p
 
-1 min  →  Copy-Item "e:\CLAUD\_templates\react-vite-tailwind-gsap\CLAUDE.md" .\CLAUDE.md
+1 min  →  Copy-Item "./_templates/react-vite-tailwind-gsap/CLAUDE.md" .\CLAUDE.md
 
 3 min  →  Edit CLAUDE.md:
            - Change title
@@ -567,10 +567,10 @@ Claude will make wrong assumptions in that area.
            - Update Project Structure to match your src/ layout
            - Add Known Issues for GSAP plugin registration
 
-1 min  →  Edit e:\CLAUD\AGENTS.md:
+1 min  →  Edit ./AGENTS.md:
            - Add portfolio-site row to Projects table
 
-0 min  →  cd e:\CLAUD\portfolio-site && claude
+0 min  →  cd ./portfolio-site && claude
            ← ECC is live. Claude knows your stack, rules, agents.
 ```
 

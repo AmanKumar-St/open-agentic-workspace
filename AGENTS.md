@@ -12,8 +12,8 @@ Always read the project's `CLAUDE.md` before working on any project.
 
 ## Adding a New Project
 When I add a new project, I will:
-1. Create a folder under `e:\CLAUD\`
-2. Copy the relevant template from `e:\CLAUD\_templates\` as the project's `CLAUDE.md`
+1. Create a folder under the workspace root (`./`)
+2. Copy the relevant template from `./_templates/` as the project's `CLAUDE.md`
 3. Update the Projects table above
 
 ## Stack Templates Available
@@ -30,7 +30,7 @@ When I add a new project, I will:
 
 ## Model & Environment
 - Model: openai/gpt-oss-120b:free (via OpenRouter)
-- Python: d:\Downloads\python\python.exe
+- Python: Your Path to the python interpreter
 - IDE: Antigravity IDE + Claude Code CLI
 
 ## Agent Delegation Quick Reference

@@ -115,7 +115,7 @@ ECC command files with this one-time PowerShell command:
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\.claude\commands" | Out-Null
-Copy-Item "e:\CLAUD\ECC\commands\*.md" "$HOME\.claude\commands\"
+Copy-Item "./ECC/commands/*.md" "$HOME\.claude\commands\"
 Write-Host "Commands installed: $((Get-ChildItem "$HOME\.claude\commands\*.md").Count)"
 ```
 

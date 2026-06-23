@@ -13,7 +13,7 @@ There are exactly **3 places** the model string lives:
 |---|------|-----------------|
 | 1 | `%USERPROFILE%\.claude\settings.json` | The model Claude Code CLI uses for every session |
 | 2 | `%USERPROFILE%\.claude\agents\*.md` (67 files) | The model each ECC specialist agent uses when invoked |
-| 3 | `e:\CLAUD\AGENTS.md` | Human-readable workspace registry (documentation only) |
+| 3 | `./AGENTS.md` (Workspace root) | Human-readable workspace registry (documentation only) |
 
 ---
 
@@ -73,7 +73,7 @@ Get-ChildItem "$agentPath\*.md" | ForEach-Object {
 Write-Host "[2/3] Agent files patched: $patched files"
 
 # ---- 3. Update workspace AGENTS.md (documentation) ----
-$agentsMd = "e:\CLAUD\AGENTS.md"
+$agentsMd = "./AGENTS.md"
 $agentsMdContent = Get-Content $agentsMd -Raw
 $agentsMdUpdated = $agentsMdContent -replace '(?m)^- Model: .+$', "- Model: $NEW_MODEL (via OpenRouter)"
 Set-Content -Path $agentsMd -Value $agentsMdUpdated -NoNewline
@@ -128,8 +128,8 @@ $NEW_MODEL = "deepseek/deepseek-r1:free"
 
 These are model-agnostic — leave them alone:
 
-- `e:\CLAUD\_templates\**\CLAUDE.md` — project instructions, not model-specific
-- `e:\CLAUD\pyGame\CLAUDE.md` — same
+- `./_templates/**/CLAUDE.md` — project instructions, not model-specific
+- `./pyGame/CLAUDE.md` — same
 - `%USERPROFILE%\.claude\rules\ecc\**` — plain markdown coding standards
 - `%USERPROFILE%\.claude\skills\**` — workflow definitions
 - `ANTHROPIC_BASE_URL` in settings.json — stays `https://openrouter.ai/api/v1`

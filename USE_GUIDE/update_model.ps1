@@ -23,7 +23,7 @@ if (Test-Path $agentPath) {
 Write-Host "[2/3] Agent files patched: $patched files"
 
 # ---- 3. Update workspace AGENTS.md (documentation) ----
-$agentsMd = "e:\CLAUD\AGENTS.md"
+$agentsMd = "./AGENTS.md"
 if (Test-Path $agentsMd) {
     $agentsMdContent = Get-Content $agentsMd -Raw
     $agentsMdUpdated = $agentsMdContent -replace '(?m)^- Model: .+$', "- Model: $NEW_MODEL (via OpenRouter)"

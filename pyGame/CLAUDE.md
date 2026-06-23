@@ -3,12 +3,12 @@
 ## Stack
 - **Language:** Python 3.x
 - **Framework:** pygame
-- **Package structure:** `snake_game/` is a proper package — always run as `python -m snake_game` from `e:\CLAUD\pyGame`
-- **Python path:** `d:\Downloads\python\python.exe`
+- **Package structure:** `snake_game/` is a proper package — always run as `python -m snake_game` from `./pyGame`
+- **Python path:** `python`
 
 ## Run Commands
 ```bash
-# Correct way to run (from e:\CLAUD\pyGame)
+# Correct way to run (from ./pyGame)
 python -m snake_game
 
 # Demo / headless test
